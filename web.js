@@ -12,7 +12,7 @@ var htmltext = fs.readFile(filename, function (err, data) {
 }); 
 
 app.get('/', function(request, response) {
-  response.send(htmltext);
+  response.send("idk3");
 });
 
 var port = process.env.PORT || 5000;
