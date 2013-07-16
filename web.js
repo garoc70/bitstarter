@@ -13,10 +13,8 @@ fs.readFile(filename, function (err, data) {
   htmltext = data;
 }); 
 
-var buffer = new Buffer(htmltext);
-
 app.get('/', function(request, response) {
-  response.send(buffer.toString('utf-8'));
+  response.send(htmltext.toString('utf-8'));
 });
 
 var port = process.env.PORT || 5000;
