@@ -4,10 +4,13 @@ var fs = require('fs');
 var app = express.createServer(express.logger());
 
 var filename = 'index.html';
+var htmltext = '';
 
 fs.readFile(filename, function (err, data) {
-  if (err) throw err;
-  var htmltext = data;
+  if (err) {
+    throw err;
+  }
+  htmltext = data;
 }); 
 
 app.get('/', function(request, response) {
