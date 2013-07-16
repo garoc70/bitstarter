@@ -4,7 +4,9 @@ var fs = require('fs');
 
 var app = express.createServer(express.logger());
 
-var htmltext = fs.readFile('index.html', function (err, data) {
+var filename = 'index.html';
+
+var htmltext = fs.readFile(filename, function (err, data) {
   if (err) throw err;
   console.log(data);
 }); 
