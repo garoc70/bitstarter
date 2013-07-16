@@ -1,18 +1,17 @@
 var express = require('express');
-
 var fs = require('fs');
 
 var app = express.createServer(express.logger());
 
 var filename = 'index.html';
 
-var htmltext = fs.readFile(filename, function (err, data) {
+fs.readFile(filename, function (err, data) {
   if (err) throw err;
-  console.log(data);
+  var htmltext = data;
 }); 
 
 app.get('/', function(request, response) {
-  response.send("idk3");
+  response.send(htmltext);
 });
 
 var port = process.env.PORT || 5000;
